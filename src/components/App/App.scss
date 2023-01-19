@@ -1,0 +1,20 @@
+.page {
+  display: flex;
+  min-width: 425px;
+  width: 100%;
+  min-height: 100vh;
+  font-family: 'TrebuchetMS', 'Verdana', 'Tahoma', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: white;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    padding: 36px 0 67px;
+    background: url(../../assets/Pattern.png) center/cover;
+    width: 100%;
+  }
+}

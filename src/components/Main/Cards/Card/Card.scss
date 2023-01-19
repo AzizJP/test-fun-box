@@ -1,0 +1,213 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 0;
+  clip-path: polygon(0 45px, 45px 0, 320px 0, 320px 480px, 0 480px);
+  border: 4px solid #1698D9;
+  background-color: #f2f2f2;
+  border-radius: 12px;
+  width: 312px;
+  height: 472px;
+  color: black;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color linear 0.3s;
+
+  &-hover {
+    &:hover {
+      border-color: #2EA8E6;
+      transition: border-color linear 0.3s;
+      .card__circle {
+        background-color: #2EA8E6;
+        transition: background-color linear 0.3s;
+      }
+      .card__border {
+        background-color: #2EA8E6;
+        transition: background-color linear 0.3s;
+      }
+    }
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 500px;
+  }
+
+  &_ended {
+    border-color: #B3B3B3;
+    cursor: auto;
+    
+    &:hover {
+      border-color: #B3B3B3;
+      .card__circle_disabled {
+        background-color: #B3B3B3;
+      }
+      .card__border_disabled {
+        background-color: #B3B3B3;
+      }
+    }
+  }
+
+  &_selected {
+    border-color: #D91667;
+
+    &-hover {
+      &:hover {
+        border-color: #E52E7A;
+        transition: border-color linear 0.3s;
+        .card__circle_selected {
+          background-color: #E52E7A;
+          transition: background-color linear 0.3s;
+        }
+        .card__border_selected {
+          background-color: #E52E7A;
+          transition: background-color linear 0.3s;
+        }
+      }
+    }
+
+
+  }
+
+  &__disabled {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f280;
+    z-index: 3;
+  }
+
+  &__circle {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background-color: #1698D9;
+    clip-path: circle(50%);
+    height: 80px;
+    width: 80px;
+    z-index: 2;
+    transition: background-color linear 0.3s;
+
+    &_disabled {
+      background-color: #B3B3B3;
+    }
+
+    &_selected {
+      background-color: #D91667;
+    }
+  }
+  
+  &__weight {
+    margin: 20px 0 0 0;
+    font-size: 42px;
+    line-height: 22px;
+    text-align: center;
+    color: #FFFFFF;
+
+    &:last-child {
+      font-size: 21px;
+      margin-top: 10px;
+    }
+  }
+
+  &__border {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 50px;
+    height: 50px;
+    clip-path: polygon(0 45px, 45px 0, 50.6px 0px, 0px 50.6px);
+    background-color: #1698D9;
+    z-index: 3;
+    transition: background-color linear 0.3s;
+
+    &_disabled {
+      background-color: #B3B3B3;
+    }
+
+    &_selected {
+      background-color: #D91667;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: url(../../../../assets/Photo.png) no-repeat bottom/contain;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  &__name {
+    z-index: 2;
+    padding: 21px 0 5px 51px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 19px;
+    color: #666666;
+  }
+
+  &__title {
+    z-index: 2;
+    padding-left: 48px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  &__stuff {
+    padding: 0 0 15px 51px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  &__description {
+    padding-left: 51px;
+    margin: 0;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #666666;
+  }
+
+  &__bottom-text {
+    margin: 14px 0 0;
+    font-size: 13px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-align: center;
+
+    &_wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    &_color {
+      color: #FFFF66;
+    }
+
+    &_button {
+      padding: 0 0 0 6px;
+      border: none;
+      color: #1698D9;
+      background-color: inherit;
+      text-decoration: underline;
+      text-decoration-style: dashed;
+      cursor: pointer;
+      transition: color linear 0.3s;
+    
+      &:hover {
+        color: #2EA8E6;
+        transition: color linear 0.3s;
+      }
+    }
+  }
+}
